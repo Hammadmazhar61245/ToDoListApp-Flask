@@ -1,14 +1,43 @@
-from flask import Flask , render_template
+from flask import Flask , render_template , request 
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return render_template("home.html")
 
-@app.route("/display")
-def display():
-    return render_template("display.html") 
+todolist = [] 
+
+@app.route("/" , methods=["GET" , "POST"]) 
+
+def home():
+
+    if request.method=="POST":
+        task= request.form["task"]
+
+        # now we will make a dictionary 
+        # storing the data in the dictionary 
+        tododict = {
+             "tasktitle": task,
+             "Status": False
+        } 
+        todolist.append(tododict)      
+
+    return render_template("home.html", todolist=todolist)
+    
+if __name__ == "__main__":
+    app.run(debug = True)  
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
 
 
     
