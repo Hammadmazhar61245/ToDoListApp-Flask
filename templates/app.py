@@ -25,8 +25,11 @@ def home():
         todolist.append(tododict);  
 
         return render_template("home.html", todolist=todolist)
+    def random():
+        print("Adding random folder data for the testing of hte program  ")
     
-app.run(debug = True) 
+app.run(debug = True)  
+
 
 
 
