@@ -18,26 +18,22 @@ def home():
              "tasktitle": task,
              "Status": False
         } 
-        todolist.append(tododict)      
+        todolist.append(tododict)  
+        print(todolist)  
+
 
     return render_template("home.html", todolist=todolist)
+ 
     
 if __name__ == "__main__":
     app.run(debug = True)  
 
 
+# from flask import Flask , render_template, request 
 
+# app = Flask(__name__)
 
+# @app.route("/" , methods=["POST" , "GET"])  
 
+# def home():
 
-
-
-
-
-
-    
-
-
-
-
-    

@@ -9,14 +9,22 @@
 </head>
 <body> 
 
-    <div class="mb-5 bg-gray-400  text-left hover: ">
+    <div class="absolute top-64 w-96 h-96 left-1/2 -translate-x-1/2 bg-gray-400  w-  text-left hover: shadow-lg  border  ">
       <h1 class="border rounded-full  bg-blue-300 text-black hover:shadow text-center"> 
         Welcome to the ToDoList App 
       </h1>  
       <form method="POST"> 
-        <input name="task" placeholder="Enter the Task Name"> 
-        <button class="bg-blue-400 text-white px-4 py-2  border rounded-full hover:shadow-lg transition-duration-300 hover: text-blue-500 bg-green-500" > Save Task </button>
-      </form>
+        <input name="task" placeholder="Enter the Task Name" class="border hover:shadow-lg font-weight black ml-4 mt-4"> 
+        <button class="bg-blue-400 text-white px-4 py-2  hover:shadow-lg transition-duration-300 hover: text-blue-500 bg-green-500" > Save Task </button>
+      </form> 
+
+      <h1 class="border rounded-full mt-5 bg-red-300 "> Tasks</h1>
+      <ul> 
+        {%  for todo in todolist %}
+         <li class="bg-purple-200 mt-2 text-black">{{ todo.tasktitle}} </li>
+         {% endfor %} 
+        <ul>
+
     </div>
     
     
