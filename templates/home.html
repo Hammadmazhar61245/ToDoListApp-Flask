@@ -7,23 +7,40 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body> 
+<body > 
 
     <div class="absolute top-64 w-96 h-96 left-1/2 -translate-x-1/2 bg-gray-400  w-  text-left hover: shadow-lg  border  ">
-      <h1 class="border rounded-full  bg-blue-300 text-black hover:shadow text-center"> 
+      <h1 class="border rounded  bg-blue-300 text-black hover:shadow text-center"> 
         Welcome to the ToDoList App 
       </h1>  
       <form method="POST"> 
-        <input name="task" placeholder="Enter the Task Name" class="border hover:shadow-lg font-weight black ml-4 mt-4"> 
-        <button class="bg-blue-400 text-white px-4 py-2  hover:shadow-lg transition-duration-300 hover: text-blue-500 bg-green-500" > Save Task </button>
+        <input name="task" placeholder="Enter the Task Title " class="border hover:shadow-lg font-weight black ml-4 mt-4"> 
+        <input name ="description" placeholder="Enter the Task Description" class="border hover:shadow-lg font-weight black ml-4 mt-4">
+        <input name ="tasktime" placeholder="Enter the Task Time" class="border hover:shadow-lg font-weight black ml-4 mt-4">
+        <input name ="status" placeholder="Enter the Task Status" class="border hover:shadow-lg font-weight black ml-4 mt-4">
+
+
+        <button class=" flex bg-blue-400 text-white px-4 py-2  ml-4 mt-2 hover:shadow-lg transition-duration-300 hover: text-blue-500 bg-green-500" > Save Task </button>
       </form> 
 
-      <h1 class="border rounded-full mt-5 bg-red-300 "> Tasks</h1>
+      <h1 class="border  mt-1 h-10 bg-red-300 "> Tasks List </h1>
       <ul> 
-        {%  for todo in todolist %}
-         <li class="bg-purple-200 mt-2 text-black">{{ todo.tasktitle}} </li>
-         {% endfor %} 
-        <ul>
+        {% for todo in todolist %}
+        <li class="mt-1 bg-purple-100 border rounded hover: shadow-md">
+          <p> TaskTitle:  {{ todo.TaskTitle }} </p>  </li> 
+          <li class="mt-1 bg-purple-100 border rounded hover: shadow-md">
+            <p> TaskDescriptionL: {{ todo.TaskDescription}} </p> 
+          </li> 
+          <li class="mt-1 bg-purple-100 border rounded hover: shadow-md">
+            <p> Task Time : {{ todo.TaskTime}} </p> 
+          </li> 
+          <li class="mt-1 bg-purple-100 border rounded hover: shadow-md">
+            <p> Task Status : {{ todo.TaskStatus }} </p>
+          </li>
+          
+        {% endfor %} 
+       
+      </ul>
 
     </div>
     
